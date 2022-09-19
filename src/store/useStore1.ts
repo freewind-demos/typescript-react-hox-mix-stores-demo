@@ -1,10 +1,10 @@
 import {useState} from 'react';
 
-import {createGlobalStore} from 'hox';
+import {createStore} from 'hox';
 import {useStore2} from "./useStore2";
 
 
-export const [useStore1] = createGlobalStore(() => {
+export const [useStore1, Store1Provider] = createStore(() => {
     const [user, setUser] = useState<string>();
     const {version} = useStore2();
 

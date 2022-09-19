@@ -2,13 +2,16 @@ import React, {FC} from 'react';
 import './Hello.pcss';
 import {Version} from "./Version";
 import {User} from "./User";
-import {HoxRoot} from "hox";
+import {Store2Provider} from './store/useStore2';
+import {Store1Provider} from './store/useStore1';
 
 type Props = {};
 
 export const Hello: FC<Props> = ({}) => {
-    return <HoxRoot>
-        <Version/>
-        <User/>
-    </HoxRoot>;
+    return <Store1Provider>
+        <Store2Provider>
+            <Version/>
+            <User/>
+        </Store2Provider>
+    </Store1Provider>;
 }
